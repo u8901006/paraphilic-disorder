@@ -1,0 +1,15 @@
+{
+  "name": "paraphilic-disorder-daily-report",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Paraphilic Disorder Research Daily Report - 性偏差疾患研究文獻日報",
+  "scripts": {
+    "fetch": "node scripts/fetch_papers.mjs",
+    "report": "node scripts/generate_report.mjs",
+    "index": "node scripts/generate_index.mjs"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
