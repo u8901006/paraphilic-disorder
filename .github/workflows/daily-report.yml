@@ -81,8 +81,8 @@ jobs:
           s = p.read_text(encoding="utf-8")
           s = s.replace("https://open.bigmodel.cn/api/coding/paas/v4", "https://integrate.api.nvidia.com/v1")
           for old, new in [
-              ("GLM-5-Turbo", "nvidia/nemotron-3-super-120b-a12b"),
-              ("glm-5-turbo", "nvidia/nemotron-3-super-120b-a12b"),
+              ("GLM-5-Turbo", "nvidia/nemotron-3-ultra-550b-a55b"),
+              ("glm-5-turbo", "nvidia/nemotron-3-ultra-550b-a55b"),
               ("GLM-4.7-Flash", "nvidia/nemotron-3-ultra-550b-a55b"),
               ("glm-4.7-flash", "nvidia/nemotron-3-ultra-550b-a55b"),
               ("GLM-4.7", "nvidia/nemotron-3-ultra-550b-a55b"),
@@ -128,6 +128,7 @@ jobs:
           git add docs/
           git diff --cached --quiet && echo "No changes to commit" && exit 0
           git commit -m "📄 paraphilic disorder daily report: ${{ steps.date.outputs.target }}"
+          git restore -- scripts/generate_report.mjs
           git pull --rebase origin main
           git push
 
